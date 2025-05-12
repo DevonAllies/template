@@ -1,0 +1,68 @@
+---
+title: "template"
+format: pdf
+editor: visual
+---
+
+```{r}
+#| label: installLoadPackages
+#| warning: false
+#| message: false
+#| include: false
+
+# Required packages
+requiredPackages <- c("tidyverse", "reticulate", "scales", "readxl", "REDCapR")
+
+# Function to check if packages are installed
+installPackages <- function(pkg) {
+  if(!requireNamespace(pkg, quietly = TRUE)) {
+    install.packages(pkg, dependencies = TRUE, quiet = FALSE)
+  }
+}
+
+# Install packages if not found on local
+invisible(sapply(requiredPackages, installPackages))
+
+# Load packages
+invisible(lapply(requiredPackages, library, character.only = TRUE))
+```
+
+```{r}
+#| label: installPythonPackages
+#| warning: false
+#| messaage: true
+#| include: false
+
+# Include the required packages
+pythonPackages <- c('numpy', 'pandas', 'seaborn', 'matplotlib', 'statsmodel', 'scienceplots', 'tensorflow')
+
+# Function to check whether the packages / modules have been installed
+installPythonPackages <- function(packages) {
+  for(pkg in packages) {
+    if(!reticulate::py_module_available(pkg)) {
+      message("Installing Python packages ", pkg)
+      reticulate::py_install(pkg, pip = FALSE)
+    } else {
+      message("Python package ", pkg, "is already installed")
+    }
+  }
+}
+
+# Install packages
+installPythonPackages(pythonPackages)
+```
+
+```{python}
+#| label: loadPythonModules
+#| message: false
+#| warning: false
+#| include: false
+
+# Import python modules
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import statsmodel.api as sm
+import scienceplots
+import seaborn as sns
+```
