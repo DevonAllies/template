@@ -1,4 +1,4 @@
-# template.pdf
+# template
 
 This document outlines the setup and requirements for generating the `template.pdf` file. It leverages both R and Python for data manipulation, analysis, and visualization.
 
@@ -51,3 +51,7 @@ The R code within the document will automatically attempt to install any missing
     ```
 
    This command will execute the R and Python code chunks within the Quarto document and generate the `template.pdf` file.
+
+## Acknowledgement
+
+This template was built using resources from Stellenbosch University
