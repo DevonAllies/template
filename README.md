@@ -36,6 +36,10 @@ Before attempting to render this document, ensure that the following software an
    - `scienceplots`: A library of scientific plotting styles for matplotlib.
    - `tensorflow`: An open-source software library for numerical computation using data flow graphs.
 
+**5. Python and R figure generation:**
+
+   The code chunks for python and r figure generation has been include:
+
 ## Installation
 
 The R code within the document will automatically attempt to install any missing R and Python packages when the document is rendered.
