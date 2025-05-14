@@ -66,3 +66,19 @@ import statsmodel.api as sm
 import scienceplots
 import seaborn as sns
 ```
+
+```{python}
+#| label: fig-pythonExample
+#| fig-cap: 'Provide a caption for the python generated figure!'
+#| fig-pos: 'H'
+
+# Plot a python figure here!
+```
+
+```{r}
+#| label: fig-rExample
+#| fig-cap: 'Provide a caption for the r generated figure!'
+#| fig-pos: 'H'
+
+# Plot a r figure here!
+```
