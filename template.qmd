@@ -1,6 +1,39 @@
 ---
-title: "template"
-format: pdf
+format:
+  pdf:
+    engine: xelatex
+    documentclass: article
+    classoption: [12pt, a4paper]
+    header-includes: |
+      \usepackage{fontspec}
+      \setmainfont{Times New Roman}
+      \usepackage[margin=2.0cm]{geometry}
+      \usepackage{setspace}
+      \doublespacing
+      \usepackage{hyperref}
+      \usepackage[nottoc]{tocbibind}
+      \usepackage[nopostdot, acronym]{glossaries}
+      \makeglossaries
+      \setlength{\glsdescwidth}{0.8\textwidth}
+      \AtBeginDocument{
+        \title{My Template}
+        \maketitle
+        \begin{center}
+          {\author{Example}}
+          {\date{\today}}
+        \end{center}
+        \clearpage
+        \pagenumbering{roman}
+        \clearpage
+      }
+      \AtEndDocument{
+        \clearpage
+        \listoftables
+        \clearpage
+        \listoffigures
+      }
+    toc: true
+    toc-depth: 2
 editor: visual
 ---
 
@@ -11,7 +44,7 @@ editor: visual
 #| include: false
 
 # Required packages
-requiredPackages <- c("tidyverse", "reticulate", "scales", "readxl", "REDCapR")
+requiredPackages <- c("tidyverse", "reticulate", "scales", "readxl")
 
 # Function to check if packages are installed
 installPackages <- function(pkg) {
@@ -34,7 +67,7 @@ invisible(lapply(requiredPackages, library, character.only = TRUE))
 #| include: false
 
 # Include the required packages
-pythonPackages <- c('numpy', 'pandas', 'seaborn', 'matplotlib', 'statsmodel', 'scienceplots', 'tensorflow')
+pythonPackages <- c('numpy', 'pandas', 'seaborn', 'matplotlib', 'statsmodels', 'scienceplots')
 
 # Function to check whether the packages / modules have been installed
 installPythonPackages <- function(packages) {
@@ -62,7 +95,7 @@ installPythonPackages(pythonPackages)
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import statsmodel.api as sm
+import statsmodels.api as sm
 import scienceplots
 import seaborn as sns
 ```
@@ -71,6 +104,7 @@ import seaborn as sns
 #| label: fig-pythonExample
 #| fig-cap: 'Provide a caption for the python generated figure!'
 #| fig-pos: 'H'
+#| echo
 
 # Plot a python figure here!
 ```
@@ -82,3 +116,13 @@ import seaborn as sns
 
 # Plot a r figure here!
 ```
+
+\newpage
+
+# Introduction:
+
+# Background:
+
+# Knowledge: Current and Gaps:
+
+# Relevance: 
